@@ -1,9 +1,9 @@
-const isPrime= (n)=> {
+const isPrime= (num)=> {
   let isPrime= true;
-  if (n<= 2) return true;
-  if (n%2== 0) return false; 
-  for (let i= 2; i< n/2; ++i){
-    if (n%i== 0) {
+  if (num<= 2) return true;
+  if (num%2== 0) return false; 
+  for (let ind= 2; ind< Math.sqrt(num) +1; ++ind){
+    if (num%ind== 0) {
       ifPrime= !isPrime;
       break;
    }
@@ -13,13 +13,13 @@ const isPrime= (n)=> {
 
 console.log(isPrime(13));
 
-const isArmStrong= (n)=> {
-  let s= `${n}`;
+const isArmStrong= (num)=> {
+  let str= `${num}`;
   // let arr= []
-  // for (let i= 0; i< s.length; ++i) {arr.push(Number(s[i]));}
+  // for (let i= 0; i< str.length; ++i) {arr.push(Number(str[i]));}
   let cubeAdd= 0;
-  for (let i of s) cubeAdd+= Math.pow(Number(i), 3);
-  return n=== cubeAdd;
+  for (let i of str) cubeAdd+= Math.pow(Number(i), 3);
+  return num=== cubeAdd;
 }
 
 
